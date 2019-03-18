@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  CLARIFAI_API: 'fce808686a154a4eb5740c2482ee4114',
+  FOOD2FORK_API: 'fbb5401e233b547597739fe7108ad16d'
 };
 
 /*

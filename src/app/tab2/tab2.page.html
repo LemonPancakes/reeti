@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      TEST PAGE
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-button (click)="takePicture()" ion-button color="primary">Take Picture</ion-button>
+  <ion-button (click)="pickFromGallery()" ion-button color="secondary">Pick Picture</ion-button>
+  <ion-button (click)="getRecipes()" ion-button color="tertiary">Get Recipes</ion-button>
+  <img [src]="base64Image" *ngIf="base64Image" />
+  <ion-list *ngIf="recipes">
+    <ion-card *ngFor="let recipe of recipes">
+      <ion-img [src]="recipe.image_url" width="60" height="60"></ion-img>
+      <ion-card-subtitle>{{ recipe.publisher }}</ion-card-subtitle>
+      <ion-card-title>{{ recipe.title }}</ion-card-title>
+      <ion-button [href]="recipe.source_url">Learn More</ion-button>
+    </ion-card>
+  </ion-list>
+</ion-content>
